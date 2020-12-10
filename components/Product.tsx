@@ -4,6 +4,7 @@ import ButtonBase from "@material-ui/core/ButtonBase"
 import Typography from "@material-ui/core/Typography"
 
 import { ProductItem } from "../global"
+import { useSelector } from "react-redux"
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -83,7 +84,9 @@ const useStyles = makeStyles((theme: Theme) =>
 const Product = () => {
   const classes = useStyles({})
 
-  const products = [] // TODO
+  const products = useSelector((state: ProductItem[]) => {
+    return state
+  })
 
   return (
     <div className={classes.root}>
